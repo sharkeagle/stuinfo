@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.example.stukc.mapper.UserMapper">
+
+    <update id="update">
+        update admin
+        <set>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="password!=null">
+                password=#{password}
+            </if>
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <select id="TUXF" statementType="CALLABLE" resultType="float" parameterType="org.example.stukc.mapper.UserMapper">
+        {
+        call TUXF(#{sId,mode=IN},#{yD,mode=IN},#{yE,mode=IN},#{sumh,mode=OUT,jdbcType=FLOAT})
+        }
+    </select>
+    <select id="numB1" statementType="CALLABLE">
+        {
+        call h3(#{teaID,mode=IN},#{kcID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+        }
+
+    </select>
+    <select id="numB2" statementType="CALLABLE">
+        {
+            call h4(#{teaID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+            }
+
+    </select>
+    <select id="delestu" parameterType="String" resultType="int">
+        SELECT  delestu(#{stuid})
+    </select>
+    <select id="deletea" parameterType="String" resultType="int">
+        SELECT  deletea(#{teaid})
+    </select>
+    <select id="delekc" parameterType="String" resultType="int">
+        SELECT  delekc(#{kcid})
+    </select>
+    <update id="updatexsxk">
+        update xsxk <set>
+        <if test="stuid!=null">
+            stuId=#{stuid},
+        </if>
+        <if test="kcid!=null">
+            kcId=#{kcid},
+        </if>
+        <if test="grade!=null">
+            grade=#{grade}
+        </if>
+    </set>
+        <where>
+            kcid=#{kcid}
+        and stuid=#{stuid}
+        </where>
+    </update>
+    <update id="updatekc">
+        update kc <set>
+        <if test="id!=null">
+            id=#{id},
+        </if>
+        <if test="name!=null">
+            name=#{name},
+        </if>
+        <if test="yearE!=null">
+            yearE=#{yearE},
+        </if>
+        <if test="xuef!=null">
+            xuef=#{xuef},
+        </if>
+        <if test="speid!=null">
+            speid=#{speid},
+        </if>
+        <if test="yearD!=null">
+            yearD=#{yearD}
+        </if>
+    </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <update id="updatespe">
+        update spe <set>
+        <if test="id!=null">
+            id=#{id},
+        </if>
+        <if test="name!=null">
+            `name`=#{name}
+        </if>
+    </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <update id="updatefac">
+        update fac <set>
+        <if test="id!=null">
+            id=#{id},
+        </if>
+        <if test="name!=null">
+            `name`=#{name},
+        </if>
+        <if test="speid!=null">
+            speid=#{speid},
+        </if>
+    </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <update id="updatestu">
+        update stut
+        <set>
+            <if test="name!=null">
+                name=#{name},
+            </if>
+            <if test="password!=null">
+                password=#{password},
+            </if>
+            <if test="address!=null">
+                address=#{address},
+            </if>
+            <if test="age!=null">
+                age=#{age},
+            </if>
+            <if test="sex!=null">
+                sex=#{sex},
+            </if>
+            <if test="facid!=null">
+                facid=#{facid},
+            </if>
+            <if test="facid==null">
+                facid=null
+            </if>
+
+
+        </set>
+        <where>
+            id=#{id}
+        </where>
+    </update>
+    <update id="updatetea">
+    update teat
+    <set>
+        <if test="name!=null">
+            name=#{name},
+        </if>
+        <if test="password!=null">
+            password=#{password},
+        </if>
+        <if test="address!=null">
+            address=#{address},
+        </if>
+        <if test="age!=null">
+            age=#{age},
+        </if>
+        <if test="sex!=null">
+            sex=#{sex},
+        </if>
+        <if test="speid!=null">
+            speid=#{speid},
+        </if>
+        <if test="jobt!=null">
+            jobt=#{jobt}
+        </if>
+    </set>
+    <where>
+        id=#{id}
+    </where>
+    </update>
+</mapper>

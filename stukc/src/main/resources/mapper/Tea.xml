@@ -1,0 +1,15 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.stukc.mapper.TeaMapper">
+    <select id="numB1" statementType="CALLABLE">
+        {
+            call h3(#{teaID,mode=IN},#{kcID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+            }
+
+    </select>
+    <select id="numB2" statementType="CALLABLE">
+        {
+            call h4(#{teaID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+            }
+
+    </select>
+</mapper>

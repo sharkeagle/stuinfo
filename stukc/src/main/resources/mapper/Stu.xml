@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.stukc.mapper.StuMapper">
+    <select id="TUXF" statementType="CALLABLE" resultType="float" >
+        {
+            call TUXF(#{sId,mode=IN},#{yD,mode=IN},#{yE,mode=IN},#{sumh,mode=OUT,jdbcType=FLOAT})
+            }
+    </select>
+    <select id="numB1" statementType="CALLABLE">
+        {
+            call h3(#{teaID,mode=IN},#{kcID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+            }
+
+    </select>
+    <select id="numB2" statementType="CALLABLE">
+        {
+            call h4(#{teaID,mode=IN},#{counTi,mode=OUT,jdbcType=INTEGER})
+            }
+
+    </select>
+</mapper>
